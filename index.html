@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omi Conlang Translator</title>
+
+ 
+
+    <!-- Link to the Noto Sans Marchen font -->
+    <link href="./assets/css/marchen.font.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS to apply the Marchen font -->
+    <style>
+        body {
+            font-family: 'Noto Sans Marchen', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: 40px;
+        }
+
+        .marchen-text {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+
+        .diacritic {
+            position: relative;
+            top: -0.5em;
+        }
+
+        .key {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .key p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center">Omi Conlang Translator</h1>
+        <p class="text-center">Translate English sentences into the Omi conlang script and see their pronunciation in IPA!</p>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <textarea id="inputSentence" class="form-control mb-3" rows="4" placeholder="Enter your sentence here..."></textarea>
+                <button class="btn btn-primary w-100" onclick="translateSentence()">Translate</button>
+            </div>
+        </div>
+
+        <div id="output" class="mt-5">
+            <h2>Translated Sentence (in Script):</h2>
+            <p id="translatedSentence" class="marchen-text"></p>
+            <h2>Pronunciation (IPA):</h2>
+            <p id="pronunciation"></p>
+        </div>
+
+        <div class="mt-5">
+            <h2>About Omi</h2>
+            <p>Omi is a constructed language (conlang) that uses the ancient Marchen script for its writing system. It supports any word order, providing flexibility in syntax.  Omi aims to bring back the ancient system and hopefully the language and was also made just for fun. The conlang was created on December 30th 2024.</p>
+            <p>The Marchen script was originally used to write the extinct Zhangzhung language, not Tibetan, and has been adapted for Omi.</p>   <p>Some characters in this language might show up as ⎕. The reason why this is happening is because this language was made in a rush so please do not make any pr's stating the issue as it will likely never get fixed.</p>
+        </div>
+ <div class="mt-5">
+            <h2>Flag of Omi</h2>
+<img src="./assets/Omi%20Conlang%20Flag.png" alt="Omi Conlang Flag" style="width: 300px; height: 200px;">
+    <p>
+        The flag of Omi embodies the values and cultural inspirations of the conlang.
+    </p>
+    <p>
+        At its center lies the Marchan character "H," which symbolizes happiness, prominently displayed within a vibrant sunburst design that signifies enlightenment, positivity, and the uplifting philosophy of the language.
+    </p>
+    <p>
+        Encircling the flag is an intricate swirling pattern, drawing inspiration from traditional Chechen design elements, adding a touch of elegance while honoring diverse cultural aesthetics. The deep blue and white color scheme evokes feelings of serenity and purity, reflecting the language's Buddhist influences and historical roots.
+    </p>
+    <p>
+        Overall, the flag beautifully captures the harmonious blend of ancient traditions and modern creativity that characterizes Omi.
+    </p>
+   </div>        
+           <div class="mt-5">
+            <h2>Decipher Key</h2>
+            <div class="key">
+                <h4>Alphabet & Pronunciation Key:</h4>
+                <p><strong>𑲏</strong> = a (pronounced "ɑ")</p>
+                <p><strong>𑱲</strong> = b (pronounced "buh")</p>
+                <p><strong>𑱶</strong> = c (pronounced "ʧ")</p>
+                <p><strong>𑲀</strong> = d (pronounced "dia")</p>
+                <p><strong>𑲳</strong> = e (pronounced "ɛ")</p>
+                <p><strong>𑲵</strong> = f (pronounced "fou")</p>
+                <p><strong>𑱴</strong> = g (pronounced "ɡa")</p>
+                <p><strong>𑲎</strong> = h (pronounced "hu")</p>
+                <p><strong>𑲱</strong> = i (pronounced "ie")</p>
+                <p><strong>𑱸</strong> = j (pronounced "ʤ")</p>
+                <p><strong>𑱲</strong> = k (pronounced "kuh")</p>
+                <p><strong>𑲊</strong> = l (pronounced "li")</p>
+                <p><strong>𑲁</strong> = m (pronounced "ma")</p>
+                <p><strong>𑱽</strong> = n (pronounced "nyi")</p>
+                <p><strong>𑲴</strong> = o (pronounced "op")</p>
+                <p><strong>𑱾</strong> = p (pronounced "pl")</p>
+                <p><strong>𑱴</strong> = q (pronounced "qa")</p>
+                <p><strong>𑲊</strong> = r (pronounced "ru")</p>
+                <p><strong>𑲍</strong> = s (pronounced "sk")</p>
+                <p><strong>𑱺</strong> = t (pronounced "tl")</p>
+                <p><strong>𑲲</strong> = u (pronounced "ui")</p>
+                <p><strong>𑲶</strong> = v (pronounced "vn")</p>
+                <p><strong>𑲅</strong> = w (pronounced "wp")</p>
+                <p><strong>𑲆</strong> = x (pronounced "ʃ")</p>
+                <p><strong>𑲇</strong> = y (pronounced "jh")</p>
+                <p><strong>𑲆</strong> = z (pronounced "ze")</p>
+                <p><strong>Chinese Numerals:</strong> Numbers are written using Chinese characters, for example, 一 for 1, 二  for 2, and so on. They are also pronounced the exact same as they are in Chinese</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Initial translator functionality -->
+    <script src="./assets/js/omi.js"></script>
+</body>
+</html>
